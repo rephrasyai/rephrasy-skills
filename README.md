@@ -1,5 +1,7 @@
 # rephrasy-skills
 
+[![skills.sh](https://skills.sh/b/rephrasyai/rephrasy-skills)](https://skills.sh/rephrasyai/rephrasy-skills)
+
 Free, MIT-licensed **[Agent Skills](https://code.claude.com/docs/en/skills)** for content work: humanize AI text, keep your keywords intact, pass AI detectors, and ship agency-quality drafts. Works across Claude Code, Codex, Cursor, ChatGPT, and any client that supports `SKILL.md` skills.
 
 Made by [Rephrasy](https://rephrasy.ai) — the AI humanizer and detector.
@@ -10,28 +12,28 @@ Made by [Rephrasy](https://rephrasy.ai) — the AI humanizer and detector.
 
 | Skill | What it does |
 |---|---|
-| [`humanize-ai-text`](humanize-ai-text) | Rewrite AI-sounding text so it reads like a person wrote it |
-| [`seo-keyword-preserving-rewrite`](seo-keyword-preserving-rewrite) | Humanize while keeping target keywords and density intact |
-| [`agency-quality-draft`](agency-quality-draft) | Turn a brief or outline into a polished, publish-ready draft |
-| [`detect-ai-text-self-check`](detect-ai-text-self-check) | Audit a draft for AI tells before it goes out |
-| [`humanize-with-rephrasy`](humanize-with-rephrasy) | Detector-grade humanization via the Rephrasy API / MCP tool *(needs an API key)* |
+| [`humanize-ai-text`](skills/humanize-ai-text) | Rewrite AI-sounding text so it reads like a person wrote it |
+| [`seo-keyword-preserving-rewrite`](skills/seo-keyword-preserving-rewrite) | Humanize while keeping target keywords and density intact |
+| [`agency-quality-draft`](skills/agency-quality-draft) | Turn a brief or outline into a polished, publish-ready draft |
+| [`detect-ai-text-self-check`](skills/detect-ai-text-self-check) | Audit a draft for AI tells before it goes out |
+| [`humanize-with-rephrasy`](skills/humanize-with-rephrasy) | Detector-grade humanization via the Rephrasy API / MCP tool *(needs an API key)* |
 
 ### Pass a specific AI detector
 
 | Skill | Detector |
 |---|---|
-| [`bypass-turnitin`](bypass-turnitin) | Turnitin |
-| [`bypass-gptzero`](bypass-gptzero) | GPTZero |
-| [`bypass-zerogpt`](bypass-zerogpt) | ZeroGPT |
-| [`bypass-copyleaks`](bypass-copyleaks) | Copyleaks |
-| [`bypass-pangram`](bypass-pangram) | Pangram |
-| [`bypass-originality-ai`](bypass-originality-ai) | Originality.ai |
-| [`bypass-winston-ai`](bypass-winston-ai) | Winston AI |
-| [`bypass-sapling`](bypass-sapling) | Sapling |
-| [`bypass-crossplag`](bypass-crossplag) | Crossplag |
-| [`bypass-content-at-scale`](bypass-content-at-scale) | Content at Scale |
-| [`bypass-gptradar`](bypass-gptradar) | GPT Radar |
-| [`bypass-writer-ai-detector`](bypass-writer-ai-detector) | Writer.com AI Detector |
+| [`bypass-turnitin`](skills/bypass-turnitin) | Turnitin |
+| [`bypass-gptzero`](skills/bypass-gptzero) | GPTZero |
+| [`bypass-zerogpt`](skills/bypass-zerogpt) | ZeroGPT |
+| [`bypass-copyleaks`](skills/bypass-copyleaks) | Copyleaks |
+| [`bypass-pangram`](skills/bypass-pangram) | Pangram |
+| [`bypass-originality-ai`](skills/bypass-originality-ai) | Originality.ai |
+| [`bypass-winston-ai`](skills/bypass-winston-ai) | Winston AI |
+| [`bypass-sapling`](skills/bypass-sapling) | Sapling |
+| [`bypass-crossplag`](skills/bypass-crossplag) | Crossplag |
+| [`bypass-content-at-scale`](skills/bypass-content-at-scale) | Content at Scale |
+| [`bypass-gptradar`](skills/bypass-gptradar) | GPT Radar |
+| [`bypass-writer-ai-detector`](skills/bypass-writer-ai-detector) | Writer.com AI Detector |
 
 ## Two tiers
 
@@ -39,14 +41,20 @@ Every skill works **self-contained** — no account or API key needed — as pro
 
 ## Install
 
-Each skill is a folder with a `SKILL.md`. Install one straight from GitHub:
+Skills live under [`skills/`](skills), one folder each with a `SKILL.md`. Use the [`skills`](https://skills.sh) CLI — no install needed, just `npx`:
 
 ```bash
-# Claude Code
-claude skill install github.com/rephrasyai/rephrasy-skills/humanize-ai-text
+# List everything in this repo
+npx skills add rephrasyai/rephrasy-skills --list
+
+# Install one skill
+npx skills add rephrasyai/rephrasy-skills --skill humanize-ai-text
+
+# Install all of them, targeting e.g. Claude Code
+npx skills add rephrasyai/rephrasy-skills --skill '*' -a claude-code
 ```
 
-Or copy any skill folder into your client's skills directory (e.g. `~/.claude/skills/` for Claude Code, `.cursor/skills/` for Cursor). The agent loads a skill automatically when a task matches its `description`.
+`skills add` works with Claude Code, Codex, Cursor, and the other supported agents. The agent loads a skill automatically when a task matches its `description`. Browse the collection at **[skills.sh/rephrasyai/rephrasy-skills](https://skills.sh/rephrasyai/rephrasy-skills)**.
 
 ## Using the Rephrasy tier
 
