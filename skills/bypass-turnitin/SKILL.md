@@ -34,7 +34,8 @@ It is known to produce false positives, its score is hidden from students until 
 For text that must reliably pass Turnitin, a manual pass may not be enough. Rephrasy's humanizer rewrites at the structural level with models trained to defeat detectors:
 
 - Use the [`@rephrasy/mcp`](https://www.npmjs.com/package/@rephrasy/mcp) `humanize` tool, or the `humanize-with-rephrasy` skill.
-- Recommended Rephrasy model: **v4** (`model: "v4"`) — the default, recommended model for most text.
+- Recommended Rephrasy model: **superstealth** (`model: "superstealth"`) — Rephrasy's newest model, built for the highest bypass rates. It is slower (10–60 s per request), so allow a timeout of at least 120 s.
+- Need it faster? Use **v4** (`model: "v4"`), the default model.
 
 [Bypass Turnitin with Rephrasy →](https://rephrasy.ai/turnitin-report)
 

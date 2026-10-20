@@ -42,7 +42,7 @@ The third argument is the model. Pick it for the job:
 | Model (`model` value) | Use for |
 |---|---|
 | `v4` *(recommended)* | Default. The best choice for most text. |
-| `superstealth` | Newest model, in Beta, built for the highest bypass rates — use it against Pangram. Slower (10–60 s per request); the script allows 180 s, and MCP clients need a tool timeout of at least 120 s. |
+| `superstealth` | Newest model, built for the highest bypass rates — the pick when text must pass an AI detector (Pangram, GPTZero, Turnitin …). Slower (10–60 s per request); the script allows 180 s, and MCP clients need a tool timeout of at least 120 s. |
 | `ft_clean-v3` | Keeps meaning and length closest to the source — technical writing, anything with figures. |
 | `Undetectable Model` | Earlier general-purpose model. |
 | `SEO Model` | When target keywords and density must stay intact — see the `seo-keyword-preserving-rewrite` skill. |
