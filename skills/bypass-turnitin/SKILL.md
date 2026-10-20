@@ -34,7 +34,7 @@ It is known to produce false positives, its score is hidden from students until 
 For text that must reliably pass Turnitin, a manual pass may not be enough. Rephrasy's humanizer rewrites at the structural level with models trained to defeat detectors:
 
 - Use the [`@rephrasy/mcp`](https://www.npmjs.com/package/@rephrasy/mcp) `humanize` tool, or the `humanize-with-rephrasy` skill.
-- Recommended Rephrasy model: **Undetectable Model v3** (`model: "v3"`) — the strongest all-round detector bypass.
+- Recommended Rephrasy model: **v4** (`model: "v4"`) — the default, recommended model for most text.
 
 [Bypass Turnitin with Rephrasy →](https://rephrasy.ai/turnitin-report)
 

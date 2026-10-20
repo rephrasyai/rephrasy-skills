@@ -34,23 +34,27 @@ If the [`@rephrasy/mcp`](https://www.npmjs.com/package/@rephrasy/mcp) server is 
 If no MCP server is available, call the API directly with the bundled script:
 
 ```bash
-REPHRASY_API_KEY=<your-key> node scripts/humanize.mjs "Text to humanize here." v3
+REPHRASY_API_KEY=<your-key> node scripts/humanize.mjs "Text to humanize here." v4
 ```
 
 The third argument is the model. Pick it for the job:
 
 | Model (`model` value) | Use for |
 |---|---|
-| `v3` *(recommended)* | Default. Strongest all-round detector bypass (a.k.a. Undetectable Model v3). |
-| `Undetectable Model v2` | Previous-generation fallback. |
-| `Undetectable Model` | Original model. |
+| `v4` *(recommended)* | Default. The best choice for most text. |
+| `superstealth` | Newest model, in Beta, built for the highest bypass rates — use it against Pangram. Slower (10–60 s per request); the script allows 180 s, and MCP clients need a tool timeout of at least 120 s. |
+| `ft_clean-v3` | Keeps meaning and length closest to the source — technical writing, anything with figures. |
+| `Undetectable Model` | Earlier general-purpose model. |
 | `SEO Model` | When target keywords and density must stay intact — see the `seo-keyword-preserving-rewrite` skill. |
+| `<writing-style-id>` | A Writing Style ID from the user's Rephrasy account, to write in that voice. |
+
+The older `v3` and `Undetectable Model v2` models are retired; don't request them.
 
 ## Workflow
 
 1. Humanize the text via the MCP `humanize` tool (preferred) or the script.
 2. Verify with the `detect` tool or the `detect-ai-text-self-check` skill.
-3. If a detector still flags it, re-run once more or switch model, then re-check.
+3. If a detector still flags it, re-run once more or switch model (e.g. `v4` → `superstealth`), then re-check.
 4. Preserve meaning and facts — review the output; you own what you publish.
 
 ## Guardrails

@@ -34,7 +34,7 @@ Because it leans on perplexity and burstiness, varying sentence rhythm and addin
 For text that must reliably pass GPTZero, a manual pass may not be enough. Rephrasy's humanizer rewrites at the structural level with models trained to defeat detectors:
 
 - Use the [`@rephrasy/mcp`](https://www.npmjs.com/package/@rephrasy/mcp) `humanize` tool, or the `humanize-with-rephrasy` skill.
-- Recommended Rephrasy model: **Undetectable Model v3** (`model: "v3"`) — the strongest all-round detector bypass.
+- Recommended Rephrasy model: **v4** (`model: "v4"`) — the default, recommended model for most text.
 
 [Bypass GPTZero with Rephrasy →](https://rephrasy.ai/bypass-gptzero)
 

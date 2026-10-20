@@ -34,7 +34,7 @@ It keys on sentence-level predictability, so restructuring and de-templating at 
 For text that must reliably pass Sapling, a manual pass may not be enough. Rephrasy's humanizer rewrites at the structural level with models trained to defeat detectors:
 
 - Use the [`@rephrasy/mcp`](https://www.npmjs.com/package/@rephrasy/mcp) `humanize` tool, or the `humanize-with-rephrasy` skill.
-- Recommended Rephrasy model: **Undetectable Model v3** (`model: "v3"`) — the strongest all-round detector bypass.
+- Recommended Rephrasy model: **v4** (`model: "v4"`) — the default, recommended model for most text.
 
 [Humanize AI text with Rephrasy →](https://rephrasy.ai)
 

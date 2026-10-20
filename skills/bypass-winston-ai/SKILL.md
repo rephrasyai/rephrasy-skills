@@ -34,7 +34,7 @@ Like other classifiers it reacts to uniform, predictable phrasing; varied rhythm
 For text that must reliably pass Winston AI, a manual pass may not be enough. Rephrasy's humanizer rewrites at the structural level with models trained to defeat detectors:
 
 - Use the [`@rephrasy/mcp`](https://www.npmjs.com/package/@rephrasy/mcp) `humanize` tool, or the `humanize-with-rephrasy` skill.
-- Recommended Rephrasy model: **Undetectable Model v3** (`model: "v3"`) — the strongest all-round detector bypass.
+- Recommended Rephrasy model: **v4** (`model: "v4"`) — the default, recommended model for most text.
 
 [Humanize AI text with Rephrasy →](https://rephrasy.ai)
 

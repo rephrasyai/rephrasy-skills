@@ -5,8 +5,9 @@
  * Usage:
  *   REPHRASY_API_KEY=<key> node scripts/humanize.mjs "text to humanize" [model]
  *
- * model defaults to "v3" (Undetectable Model v3). Other values:
- *   "Undetectable Model v2", "Undetectable Model", "SEO Model".
+ * model defaults to "v4" (recommended). Other values:
+ *   "superstealth" (Beta, highest bypass rates, 10-60 s), "ft_clean-v3",
+ *   "Undetectable Model", "SEO Model", or a Writing Style ID.
  *
  * Prints the humanized text to stdout. Prefer the @rephrasy/mcp `humanize`
  * tool when an MCP client is available; this script is the no-MCP fallback.
@@ -18,7 +19,7 @@ if (!apiKey) {
 }
 
 const text = process.argv[2];
-const model = process.argv[3] || "v3";
+const model = process.argv[3] || "v4";
 if (!text) {
   console.error('Usage: node scripts/humanize.mjs "text to humanize" [model]');
   process.exit(1);
@@ -29,7 +30,7 @@ try {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({ text, model, words: true }),
-    signal: AbortSignal.timeout(110_000),
+    signal: AbortSignal.timeout(180_000),
   });
 
   if (!res.ok) {
@@ -52,6 +53,6 @@ try {
   process.stdout.write(data.output + "\n");
 } catch (e) {
   const timeout = e?.name === "TimeoutError" || e?.name === "AbortError";
-  console.error(timeout ? "Request timed out after 110s — try shorter text." : `Request failed: ${e?.message ?? e}`);
+  console.error(timeout ? "Request timed out after 180s — try shorter text." : `Request failed: ${e?.message ?? e}`);
   process.exit(1);
 }
