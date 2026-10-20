@@ -27,6 +27,7 @@ Made by [Rephrasy](https://rephrasy.ai) — the AI humanizer and detector.
 | [`bypass-zerogpt`](skills/bypass-zerogpt) | ZeroGPT |
 | [`bypass-copyleaks`](skills/bypass-copyleaks) | Copyleaks |
 | [`bypass-pangram`](skills/bypass-pangram) | Pangram |
+| [`bypass-pangram-4-1`](skills/bypass-pangram-4-1) | Pangram 4.1 (October 2026 update) |
 | [`bypass-originality-ai`](skills/bypass-originality-ai) | Originality.ai |
 | [`bypass-winston-ai`](skills/bypass-winston-ai) | Winston AI |
 | [`bypass-sapling`](skills/bypass-sapling) | Sapling |
